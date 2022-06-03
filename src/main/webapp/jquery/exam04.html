@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	.red {
+		color : red
+	}
+	
+	.blue {
+		color: blue
+	}
+</style>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script>
+	$(document).ready(function() {
+		$('#btn01').click(function() {
+			/*
+			let h1Tag = document.createElement('h1')
+			let text = document.createTextNode("세번째 문장")
+			h1Tag.appendChild(text)			
+			let divTag = document.querySelector('div')
+			divTag.appendChild(h1Tag)​
+			*/
+// 			$('div').append('<h1>세번째 문장</h1>')
+// 			맨 앞에 추가
+			$('div').prepend('<h1>세번째 문장</h1>')
+		})
+
+		$('#btn02').click(function(){
+			$('ol').append('<li>노랑</li>', '<li>보라</li>')
+			$('ol').prepend('<li>노랑</li>')
+		})
+// 		버튼 맨 앞 생성 = before 뒤에 생성 = after
+		$('#btn03').click(function(){
+			$('div').before('<a href="http://www.naver.com">네이버</a>')
+		})
+		
+		$('#btn04').click(function() {
+			/*
+			let pTags = document.querySelectorAll('h1')
+			for(let i =0; i < pTags.length; i++) {
+// 				pTags[i].remove() remove 함수는 익스플로어에서 안먹음
+				pTags[i].parentNode.removeChild(pTags[i])
+			}
+			*/
+// 			$('div').remove()
+// 			empty() = 자식을 다 지워버림
+// 			$('div').empty()
+// 			자식들 다 보여짐
+			$('div > *').remove('h3')
+// 			$('div > *').remove('.c01', '#id01')
+// 			$('h1').addClass('c01') h1태그에 c01 클래스 추가하겠다 .removeClass도 가능
+		})
+		
+		$('#btn05').click(function() {
+			$('h1').addClass('red blue')
+		})
+		
+		$('#btn06').click(function() {
+			$('h1').removeClass('blue')
+		})
+	})
+</script>
+</head>
+<body>
+	<div>
+		<h1>첫번째 문장</h1>
+		<h1>두번째 문장</h1>
+		<h3>서브 문장</h3>
+		
+	</div>
+	<ol>
+		<li>빨강</li>
+		<li>파랑</li>
+		<li>초록</li>
+	</ol>
+	<button id="btn01">문장추가</button>
+	<button id="btn02">색상추가</button>
+	<button id="btn03">링크추가</button>
+	<button id="btn04">문장삭제</button>
+	<button id="btn05">색상설정</button>
+	<button id="btn06">.blue 삭제</button>
+</body>
+</html>

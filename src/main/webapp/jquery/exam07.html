@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	img {
+		width: 300px;
+		height : 320px;
+		float: left;
+	}
+	
+	button {
+		height: 320px;
+		float: left;
+	}
+	
+	
+</style>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script>
+	$(document).ready(function(){
+		$('#prevBtn').click(function(){
+			$('img').last().prependTo('span')
+		})
+		
+		$('#nextBtn').click(function(){
+			$('img').first().appendTo('span')
+		})
+		
+		let go = setInterval(function(){
+			$('#nextBtn').trigger('click')
+// 			trigger: 강제로 이벤트 발생
+		}, 2000)
+		
+		clearInterval(function(){
+			$('#go')
+		})
+	})
+</script>
+
+</head>
+<body>
+	<button id="prevBtn">PREV</button>
+	<span>
+	<img src="image/cat1.jpg">
+	<img src="image/cat2.jpg">
+	<img src="image/cat3.jpg">
+	<img src="image/cat4.jpg">
+	</span>
+	<button id="nextBtn">NEXT</button>
+	
+</body>
+</html>

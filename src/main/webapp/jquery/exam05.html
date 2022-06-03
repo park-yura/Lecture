@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	div {
+		width : 100px;
+		height: 100px;
+		background-color : red;
+/* 		기본 position: 'static'; */
+		position : absolute;
+/* 		absolute relative 가장 큰 차이 : 
+		absolute :  나의 부모의 값 절대값 left bottom , left right를 기준으로 움직임
+		relative : 내 원래 위치를 기준으로 움직이겠다. (상대적인 것)
+		fixed : 고정 위치
+  */
+	}
+</style>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script>
+	$(document).ready(function() {
+		$('div').animate({
+			width : '200px', 
+			left:'100px'
+		}, 2000)
+	})
+</script>	
+</head>
+<body>
+	<div></div>
+</body>
+</html>
